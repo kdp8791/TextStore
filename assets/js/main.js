@@ -11,6 +11,10 @@ $(document).ready(function(){
 			var color = res[res.length-1].split("=")
 			localStorage.setItem("background-color", color[color.length-1].trim().replace(";",""));
 			$('textarea').css("background-color", color[color.length-1].trim().replace(";",""));
+			for(var i = 0; i < res.length; i++)
+			{
+				$('textarea').val($('textarea').val().replace(res[i], ""));
+			}
 		}
 		
 		var res = $('textarea').val().match(text_color_regex);
@@ -19,6 +23,10 @@ $(document).ready(function(){
 			var color = res[res.length-1].split("=")
 			localStorage.setItem("text-color", color[color.length-1].trim().replace(";",""));
 			$('textarea').css("color", color[color.length-1].trim().replace(";",""));
+			for(var i = 0; i < res.length; i++)
+			{
+				$('textarea').val($('textarea').val().replace(res[i], ""));
+			}
 		}
 		
 		localStorage.setItem("content", $('textarea').val());
