@@ -19,3 +19,7 @@ textarea {
 	font-family: 'Manteka';
 	font-size: 2em;
 }
+
+textarea:focus {
+	outline:0;
+}
